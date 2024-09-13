@@ -1,9 +1,9 @@
 name: Meteor Setup and Ready
 
-# Rodar de 30 em 30 minutos
 on:
   schedule:
     - cron: '*/30 * * * *'
+  workflow_dispatch:
 
 jobs:
   setup-meteor:
