@@ -17,7 +17,7 @@ jobs:
         run: sudo apt-get install -y curl
 
       - name: Install Meteor
-        run: curl -s https://install.meteor.com/?release=2.16
+        run: curl -s https://install.meteor.com/?release=2.16 | sh 
 
       - name: Meteor Get Ready
         run: meteor --get-ready
