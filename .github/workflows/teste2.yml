@@ -1,0 +1,23 @@
+name: Meteor Setup and Ready
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  setup-meteor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install curl
+        run: sudo apt-get install -y curl
+
+      - name: Install Meteor
+        run: curl -s https://install.meteor.com/?release=2.16
+
+      - name: Meteor Get Ready
+        run: meteor --get-ready
